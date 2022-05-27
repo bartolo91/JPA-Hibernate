@@ -1,15 +1,18 @@
 package pl.kurs.burdel.task.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
 
+@Entity
 public class Brothel implements Serializable {
 
-    private static final long serialVersionUID = 1654775676576859578L;
+    private static final long serialVersionUID = 1654775676576859878L;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String brothelMamaNickName;
@@ -17,8 +20,7 @@ public class Brothel implements Serializable {
     public Brothel() {
     }
 
-    public Brothel(Long id, String name, String brothelMamaNickName) {
-        this.id = id;
+    public Brothel(String name, String brothelMamaNickName) {
         this.name = name;
         this.brothelMamaNickName = brothelMamaNickName;
     }

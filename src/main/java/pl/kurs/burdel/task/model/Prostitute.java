@@ -1,15 +1,20 @@
 package pl.kurs.burdel.task.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serial;
 import java.io.Serializable;
 
+@Entity
 public class Prostitute implements Serializable {
 
-    private static final long serialVersionUID = 1654775676576859578L;
+
+    private static final long serialVersionUID = 2873990654298493730L;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
     private String lastName;
@@ -48,11 +53,9 @@ public class Prostitute implements Serializable {
         return firstName;
     }
 
-
     public String getLastName() {
         return lastName;
     }
-
 
     public String getPreference() {
         return preference;
